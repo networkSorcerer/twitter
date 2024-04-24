@@ -1,12 +1,14 @@
+import { authService } from "fbase";
 import { useState } from "react";
 
 const Auth = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [newAccount, setNewAccount] = useState(true);
 
     const onChange = (event) => {
         const {
-            target : {name, value},
+            target: { name, value },
         } = event;
         if (name === "email") {
             setEmail(value);
@@ -15,30 +17,43 @@ const Auth = () => {
         }
     };
 
-    const onSubmit = (event) => {
+    const onSubmit = async (event) => {
         event.preventDefault();
+        try {
+            let data;
+            if (newAccount) {
+                // Create new account
+                data = await authService.createUserWithEmailAndPassword(email, password);
+            } else {
+                // Log in
+                data = await authService.signInWithEmailAndPassword(email, password);
+            }
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
         <div>
             <form onSubmit={onSubmit}>
-                <input 
-                    name="email" 
-                    type="email" 
-                    placeholder="Email" 
-                    required 
+                <input
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    required
                     value={email}
                     onChange={onChange}
-                    />
-                <input 
+                />
+                <input
                     name="password"
-                    tpye="password" 
-                    placeholder="Password" 
-                    required 
+                    type="password"  // 오타: "tpye" → "type"
+                    placeholder="Password"
+                    required
                     value={password}
                     onChange={onChange}
-                    />
-                <input type = "submit" value="Log In" />
+                />
+                <input type="submit" value={newAccount ? "Create Account" : "Log In"} />
             </form>
             <div>
                 <button>Continue with Google</button>
