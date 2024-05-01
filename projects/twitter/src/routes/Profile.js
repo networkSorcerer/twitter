@@ -13,7 +13,7 @@ const Profile = ({userObj}) => {
     const getMyNweets = async () => {
         const nweets = await dbService
         .collection("nweets")
-        .where("createId", "==", userObj.uid)
+        .where("creatorId", "==", userObj.uid)
         .orderBy("createAt", "asc")
         .get();
 
