@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/networkSorcerer/twitter.git/static/js/main.3dd415ea.js",
+    "index.html": "/networkSorcerer/twitter.git/index.html",
+    "main.3dd415ea.js.map": "/networkSorcerer/twitter.git/static/js/main.3dd415ea.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.3dd415ea.js"
+  ]
+}
