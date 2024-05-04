@@ -1,5 +1,9 @@
 # Firebase를 활용한 SNS 웹 개발
 
+
+![img](https://github.com/networkSorcerer/twitter/assets/155520035/f4ef049b-1a63-4adc-bcc1-bd3a85429597)
+![images](https://github.com/networkSorcerer/twitter/assets/155520035/b450ad8a-c53c-4d34-922b-ef64e112fb97)
+
 ## 소개
 
 이 프로젝트는 Firebase를 사용하여 간단한 SNS(Social Networking Service) 웹 애플리케이션을 개발한 것입니다. 사용자는 회원가입을 통해 계정을 만들고, 다른 사용자들과 글을 공유하며 소통할 수 있습니다.
